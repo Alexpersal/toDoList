@@ -1,19 +1,20 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { nouTexte } from "./actions/listToDoActions";
+import store from "./store";
 
 function App() {
-  /*const texte = useSelector((store) => store.listToDoReducer.texte);
-  const dispatchListToDo = useDispatch();*/
+  const prueba = useSelector((store) => store.listToDoReducer);
+  const dispatchListToDo = useDispatch();
 
   return (
     <div className="App">
       <header className="App-header">
-        <input></input>
+        <input type="text" /*onChange={}*/></input>
         <br></br>
-        <button>Nueva tarea</button>
+        <button onClick={() => dispatchListToDo(nouTexte)}>Nueva tarea</button>
         <ul>
-          <li>hola {nouTexte}</li>
+          <li>hola </li>
         </ul>
       </header>
     </div>
